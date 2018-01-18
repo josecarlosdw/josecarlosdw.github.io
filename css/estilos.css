@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #E0E0D7;
+}
+
+.container {
+	padding: 0 5%;
+}
+
+#dataTimeStl{
+  border: 1px solid #0E4E53;
+  padding: 20px;
+  max-width: 60px;
+  margin: 0 10px 10px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  display:inline-block;
+}
+#btnGetTime{
+  margin-bottom:35px;
+}
+.btnGetTimeStl{
+  background-color: #0E4E53;
+  border-color: #06F8AE;
+  padding:5px;
+  margin: 10px 0 5px 0;
+  color:#fff;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+}
+#fulDateStl{
+  font-size: 18px;
+  font-weight: bold;
+}
+.pontoEletro{
+  margin-top:20px;
+}

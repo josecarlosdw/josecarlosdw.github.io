@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" manifest="offline.manifest">
+<head>
+	<link rel="manifest" href="app.manifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/cabecalho.css">
+  <title>Progressive Ponto</title>
+  
+</head>
+<body onload="fullDate()">
+  <header class="cabecalho container">
+    <h1 class="cabecalho-logo">
+      ProgPonto
+    </h1>
+  </header>
+	<section class="pontoEletro container">
+		<div id="dataCompleta">
+		</div>
+		<div id="btnGetTime">
+			<button class="btnGetTimeStl" onclick="getTime()">Marcar Ponto</button>
+		</div>
+		<div>
+			<p id="horaMarcada"></p>
+		</div>
+	</section>
+	<script src="js/sw/registra.js"></script>
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/ponto/datatime.js"></script>
+</body>
+</html>
