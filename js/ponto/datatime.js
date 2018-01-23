@@ -6,7 +6,7 @@ function getTime(){
    var full_time = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
    var completeDate = full_time;
 
-   localStorage.setItem('dataTime', dataTime);
+   localStorage.setItem('completeDate', completeDate);
    
    document.getElementById("appointment").insertAdjacentHTML('beforeend', '<span class="dataTime" id="dataTimeStl">'+ completeDate +' </span>');
    var qtd = document.getElementsByClassName("dataTime").length;
