@@ -17,7 +17,7 @@ function getTime(){
       }, 300000);
    }else{
       document.querySelector("button").disabled = true;
-      console.log("fim");
+      console.log("terminou o expediente");
    }
 }
 
@@ -30,7 +30,6 @@ function fullDate(){
 
    document.getElementById("completeDate").insertAdjacentHTML('beforeend', '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + ' | Hora Atual: '+ current_time +' </p>')
 }
-
 
 function myAlertTime() {
   var popup = document.getElementById("myPopup");
