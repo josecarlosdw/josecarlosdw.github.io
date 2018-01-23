@@ -1,18 +1,25 @@
-    var qtd = document.getElementById("dataTimeStl");
+function getTime(){
 
-    function getTime(){
-      
-      var data = new Date();
-      var full_time = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+   document.querySelector("button").setAttribute("onclick","alert('Aguarde 5 minutos!')");
+   
+   var data = new Date();
+   var full_time = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+   var completeDate = full_time;
 
-      var dataTime = full_time;
-      
-      while (qtd < 4){
-       document.getElementById("horaMarcada").insertAdjacentHTML('beforeend', '<span id="dataTimeStl">'+ dataTime +' </span>');
-       qtd++;
-       return false;
-      }
-    }
+   localStorage.setItem('dataTime', dataTime);
+   
+   document.getElementById("appointment").insertAdjacentHTML('beforeend', '<span class="dataTime" id="dataTimeStl">'+ completeDate +' </span>');
+   var qtd = document.getElementsByClassName("dataTime").length;
+
+   if(qtd < 4){
+      setTimeout(function(){
+         document.querySelector("button").setAttribute("onclick","getTime()");
+      }, 300000);
+   }else{
+      document.querySelector("button").disabled = true;
+      console.log("fim");
+   }
+}
 
     function fullDate(){
 
@@ -21,5 +28,7 @@
       now = new Date
       var current_time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-      document.getElementById("dataCompleta").insertAdjacentHTML('beforeend', '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + ' | Hora Atual: '+ current_time +' </p>')
+      document.getElementById("completeDate").insertAdjacentHTML('beforeend', '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + ' | Hora Atual: '+ current_time +' </p>')
     }
+
+

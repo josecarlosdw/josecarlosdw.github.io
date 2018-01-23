@@ -15,14 +15,19 @@
       ProgPonto
     </h1>
   </header>
+  <script type="text/javascript">
+    dataTime = localStorage.getItem('dataTime');
+    alert('Ultima batida: ' + dataTime);
+</script> 
 	<section class="pontoEletro container">
-		<div id="dataCompleta">
+		<div id="completeDate">
 		</div>
 		<div id="btnGetTime">
 			<button class="btnGetTimeStl" onclick="getTime()">Marcar Ponto</button>
 		</div>
 		<div>
-			<p id="horaMarcada"></p>
+			<p id="appointment"></p>
+      <p id="timeSaved"></p>
 		</div>
 	</section>
 	<script src="js/sw/registra.js"></script>
