@@ -1,6 +1,6 @@
 function getTime(){
 
-   document.querySelector("button").setAttribute("onclick","alert('Aguarde 5 minutos!')");
+   document.querySelector("button").setAttribute("onclick","myAlertTime()");
    
    var data = new Date();
    var full_time = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
@@ -21,14 +21,18 @@ function getTime(){
    }
 }
 
-    function fullDate(){
+function fullDate(){
 
-      dayWeek = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
-      monthName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", "outubro", "novembro", "dezembro")
-      now = new Date
-      var current_time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+   dayWeek = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
+   monthName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", "outubro", "novembro", "dezembro")
+   now = new Date
+   var current_time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-      document.getElementById("completeDate").insertAdjacentHTML('beforeend', '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + ' | Hora Atual: '+ current_time +' </p>')
-    }
+   document.getElementById("completeDate").insertAdjacentHTML('beforeend', '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + ' | Hora Atual: '+ current_time +' </p>')
+}
 
 
+function myAlertTime() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}

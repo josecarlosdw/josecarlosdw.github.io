@@ -2,32 +2,36 @@
 <html lang="pt-br" manifest="offline.manifest">
 <head>
 	<link rel="manifest" href="app.manifest">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="css/estilos.css">
-  <link rel="stylesheet" href="css/cabecalho.css">
-  <title>Progressive Ponto</title>
-  
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/cabecalho.css">
+	<title>Progressive Ponto</title>
+	
 </head>
 <body onload="fullDate()">
-  <header class="cabecalho container">
-    <h1 class="cabecalho-logo">
-      ProgPonto
-    </h1>
-  </header>
-  <script type="text/javascript">
-    dataTime = localStorage.getItem('dataTime');
-    alert('Ultima batida: ' + dataTime);
-</script> 
+	<header class="cabecalho container">
+		<h1 class="cabecalho-logo">
+			ProgPonto
+		</h1>
+	</header>
+	<script type="text/javascript">
+		dataTime = localStorage.getItem('dataTime');
+		alert('Ultima batida: ' + dataTime);
+	</script> 
 	<section class="pontoEletro container">
+
 		<div id="completeDate">
 		</div>
 		<div id="btnGetTime">
+			<div class="popup" onclick="myAlertTime()">
+				<span class="popuptext" id="myPopup">Aguarde 5 minutos!</span>
+			</div>
 			<button class="btnGetTimeStl" onclick="getTime()">Marcar Ponto</button>
 		</div>
 		<div>
 			<p id="appointment"></p>
-      <p id="timeSaved"></p>
+			<p id="timeSaved"></p>
 		</div>
 	</section>
 	<script src="js/sw/registra.js"></script>
