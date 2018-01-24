@@ -1,6 +1,9 @@
 function getTime(){
 
-   document.querySelector("button").setAttribute("onclick","myAlertTime()");
+
+   var storedNames = JSON.parse(localStorage.getItem("names"));
+
+   document.querySelector("button").setAttribute("onclick","popupAlert()");
    
    var data = new Date();
    var full_time = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
@@ -8,30 +11,43 @@ function getTime(){
 
    localStorage.setItem('completeDate', completeDate);
    
-   document.getElementById("appointment").insertAdjacentHTML('beforeend', '<span class="dataTime" id="dataTimeStl">'+ completeDate +' </span>');
+   document.getElementById("appointment").insertAdjacentHTML('beforeend', 
+   '<span class="dataTime" id="dataTimeStl">'+ completeDate +' </span>');
    var qtd = document.getElementsByClassName("dataTime").length;
 
    if(qtd < 4){
       setTimeout(function(){
          document.querySelector("button").setAttribute("onclick","getTime()");
-      }, 300000);
+      }, 3000);
    }else{
       document.querySelector("button").disabled = true;
       console.log("terminou o expediente");
    }
+
+   if(qtd < 2){
+     var names;
+   names = prompt("Qual o seu nome?");
+   localStorage.setItem("names", JSON.stringify(names));
+   }
 }
+
+
 
 function fullDate(){
 
    dayWeek = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
-   monthName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", "outubro", "novembro", "dezembro")
+   monthName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", 
+   "outubro", "novembro", "dezembro")
    now = new Date
    var current_time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-   document.getElementById("completeDate").insertAdjacentHTML('beforeend', '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + ' | Hora Atual: '+ current_time +' </p>')
+   document.getElementById("completeDate").insertAdjacentHTML('beforeend', 
+   '<p id="fulDateStl"> Hoje é ' + dayWeek[now.getDay() ] + ', ' + now.getDate () + 
+   ' de ' + monthName [now.getMonth() ]   +  ' de '  +     now.getFullYear () + 
+   ' | Hora Atual: '+ current_time +' </p>')
 }
 
-function myAlertTime() {
+function popupAlert() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
 }

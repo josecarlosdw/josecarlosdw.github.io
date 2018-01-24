@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/cabecalho.css">
 	<title>Progressive Ponto</title>
-	
+
 </head>
 <body onload="fullDate()">
 	<header class="cabecalho container">
@@ -17,21 +17,25 @@
 	</header>
 	<script type="text/javascript">
 		completeDate = localStorage.getItem('completeDate');
-		alert('Ultima batida: ' + completeDate);
+		names = localStorage.getItem('names');
+		alert('Ultima batida as : ' + completeDate + ' Por: ' + names);
 	</script> 
 	<section class="pontoEletro container">
 
 		<div id="completeDate">
 		</div>
 		<div id="btnGetTime">
-			<div class="popup" onclick="myAlertTime()">
+			<div class="popup" onclick="popupAlert()">
 				<span class="popuptext" id="myPopup">Aguarde 5 minutos!</span>
 			</div>
-			<button class="btnGetTimeStl" onclick="getTime()">Marcar Ponto</button>
+			<button class="btnGetTimeStl" onclick="getTime()">INCLUIR</button>
 		</div>
 		<div>
 			<p id="appointment"></p>
 			<p id="timeSaved"></p>
+		</div>
+		<div>
+			<p id="locationName"></p>
 		</div>
 	</section>
 	<script src="js/sw/registra.js"></script>
