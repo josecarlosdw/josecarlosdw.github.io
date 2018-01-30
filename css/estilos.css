@@ -24,6 +24,18 @@ body {
   font-weight: bold;
   display:inline-block;
 }
+.datesDay{
+  background-color: #D9D9CF;
+  border: 1px solid #065A62;
+  border-radius: 3px;
+  padding: 10px;
+  color:#065A62;
+  font-weight: bold;
+}
+.days{
+  /*background-color: #065A62;
+  color:#fff;*/
+}
 #btnGetTime{
   margin-bottom:35px;
 }

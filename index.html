@@ -18,7 +18,7 @@
 	<script type="text/javascript">
 		completeDate = localStorage.getItem('completeDate');
 		names = localStorage.getItem('names');
-		alert('Ultima batida as : ' + completeDate + ' Por: ' + names);
+		// alert('Ultima batida as : ' + completeDate + ' Por: ' + names);
 	</script> 
 	<section class="pontoEletro container">
 
@@ -31,11 +31,13 @@
 			<button class="btnGetTimeStl" onclick="getTime()">INCLUIR</button>
 		</div>
 		<div>
-			<p id="appointment"></p>
-			<p id="timeSaved"></p>
+			<p id="appointment"></p>			
 		</div>
 		<div>
 			<p id="locationName"></p>
+		</div>
+		<div>
+			<p id="timeSaved"></p>
 		</div>
 	</section>
 	<script src="js/sw/registra.js"></script>

@@ -1,16 +1,23 @@
 function getTime(){
-
+   document.querySelector("button").setAttribute("onclick","popupAlert()");
 
    var storedNames = JSON.parse(localStorage.getItem("names"));
-
-   document.querySelector("button").setAttribute("onclick","popupAlert()");
-   
    var data = new Date();
    var full_time = data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
    var completeDate = full_time;
 
-   localStorage.setItem('completeDate', completeDate);
-   
+   const savedDates = localStorage.getItem('completeDate')
+
+   let dates
+   if (savedDates) {
+     dates = JSON.parse(savedDates)
+     dates.push(completeDate)
+   } else {
+     dates = [completeDate]
+   }
+
+   localStorage.setItem('completeDate', JSON.stringify(dates))
+
    document.getElementById("appointment").insertAdjacentHTML('beforeend', 
    '<span class="dataTime" id="dataTimeStl">'+ completeDate +' </span>');
    var qtd = document.getElementsByClassName("dataTime").length;
@@ -18,7 +25,7 @@ function getTime(){
    if(qtd < 4){
       setTimeout(function(){
          document.querySelector("button").setAttribute("onclick","getTime()");
-      }, 3000);
+      }, 300000);
    }else{
       document.querySelector("button").disabled = true;
       console.log("terminou o expediente");
@@ -29,12 +36,16 @@ function getTime(){
    names = prompt("Qual o seu nome?");
    localStorage.setItem("names", JSON.stringify(names));
    }
-}
 
-
+   if(qtd == 4){
+     document.getElementById("timeSaved").insertAdjacentHTML('beforeend', 
+   '<p class="datesDay">' + '<span class="days"> ' + now.getDate () 
+   + ' de ' + monthName [now.getMonth() ] 
+   + '</span>' + '<br>' + '<span>'+ dates +' </span>' + '</p>');
+      }
+   }
 
 function fullDate(){
-
    dayWeek = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
    monthName = new Array ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", 
    "outubro", "novembro", "dezembro")
